@@ -52,7 +52,34 @@ async function getMealById(mealID) {
 
 //addToDom
 function addToDom(mealDetails) {
-  console.log(mealDetails);
+  const ingredients = [];
+
+  for (let i = 1; i <= 20; i++) {
+    if (mealDetails[`strIngredient${i}`]) {
+      ingredients.push(
+        `${mealDetails[`strIngredient${i}`]} - ${mealDetails[`strMeasure${i}`]}`
+      );
+    }
+  }
+
+  // console.log(ingredients);
+
+  singleMeal.innerHTML = `
+  <h2>${mealDetails.strMeal}</h2>
+  <img src="${mealDetails.strMealThumb}"/>
+  <section class="ingredients">
+    <ul>
+      ${ingredients.map((item) => `<li>${item}</li>`).join("")}
+    </ul>
+  </section>
+  <div class="category">
+    <div>${mealDetails.strCategory}</div>
+    <div>${mealDetails.strArea}</div>
+  </div>
+  <section class="instruction">
+     <p>${mealDetails.strInstructions}</p>
+  </section>
+  `;
 }
 
 // EventListeners
