@@ -98,3 +98,59 @@ input {
   height: 200px;
   border: 5px solid #fff;
 }
+
+/* Single Meal */
+
+.single-meal {
+  padding: 20px;
+  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-meal h2 {
+  margin: 5px 0;
+}
+
+.single-meal img {
+  width: 400px;
+  margin: 20px 0;
+}
+
+.single-meal .ingredients {
+  list-style: none;
+  width: 500px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.single-meal .ingredients li {
+  background: #fff;
+  color: #f6d186;
+  display: inline-block;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.single-meal .category {
+  width: 300px;
+  height: 70px;
+  padding: 20px 50px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border: 5px dotted #f19292;
+}
+
+.single-meal .instruction {
+  width: 700px;
+  margin: 10px 0;
+  font-size: 17px;
+  line-height: 1.7;
+  text-align: center;
+}
