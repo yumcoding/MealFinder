@@ -7,7 +7,7 @@ const singleMeal = document.getElementById("single-meal");
 
 function findMeal(e) {
   e.preventDefault();
-
+  singleMeal.innerHTML = "";
   const meal = searchInput.value;
   if (meal === "") {
     alert("Please enter the food name 😉");
