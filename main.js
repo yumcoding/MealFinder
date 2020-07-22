@@ -1,6 +1,6 @@
 const form = document.getElementById("submit");
 const searchInput = document.getElementById("search");
-const randomBtn = document.getElementById("random-btn");
+const randomBtn = document.getElementById("random");
 const resultHeading = document.getElementById("result-heading");
 const mealsContainer = document.getElementById("meals");
 const singleMeal = document.getElementById("single-meal");
@@ -80,6 +80,14 @@ function addToDom(mealDetails) {
   `;
 }
 
+// show random Meal
+async function showRandomMeal() {
+  resultHeading.innerHTML = "";
+  mealsContainer.innerHTML = "";
+  const res = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+  const data = await res.json();
+  addToDom(data.meals[0]);
+}
 // EventListeners
 
 form.addEventListener("submit", findMeal);
@@ -97,3 +105,5 @@ mealsContainer.addEventListener("click", (e) => {
   // console.log(mealID);
   getMealById(mealID);
 });
+
+randomBtn.addEventListener("click", showRandomMeal);
