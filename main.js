@@ -67,14 +67,13 @@ function addToDom(mealDetails) {
   singleMeal.innerHTML = `
   <h2>${mealDetails.strMeal}</h2>
   <img src="${mealDetails.strMealThumb}"/>
+  <div class="category">
+  <div>${mealDetails.strCategory}</div>
+  <div>${mealDetails.strArea}</div>
+</div>
   <ul class="ingredients">
       ${ingredients.map((item) => `<li>${item}</li>`).join("")}
   </ul>
-
-  <div class="category">
-    <div>${mealDetails.strCategory}</div>
-    <div>${mealDetails.strArea}</div>
-  </div>
   <section class="instruction">
      <p>${mealDetails.strInstructions}</p>
   </section>
