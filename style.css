@@ -60,7 +60,6 @@ input {
 }
 
 .meals {
-  width: 800px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
@@ -90,7 +89,6 @@ input {
 
 .meal .mealInfo h3 {
   text-align: center;
-  margin: 0 5px;
 }
 
 .meal img {
@@ -153,4 +151,54 @@ input {
   font-size: 17px;
   line-height: 1.7;
   text-align: center;
+}
+
+@media (max-width: 900px) {
+  .meals {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .meals {
+    margin: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .single-meal .instruction {
+    width: 90%;
+  }
+}
+
+@media (max-width: 375px) {
+  .meals {
+    margin: 0;
+    grid-template-columns: 1fr;
+  }
+
+  input {
+    width: 80%;
+  }
+
+  .random-btn {
+    margin-left: 2px;
+  }
+  .result-heading h2 {
+    font-size: 16px;
+  }
+
+  .single-meal img {
+    width: 200px;
+  }
+
+  .single-meal .ingredients {
+    width: 50%;
+  }
+
+  .single-meal .ingredients li {
+    width: 100%;
+  }
+
+  .single-meal .instruction {
+    width: 90%;
+  }
 }
