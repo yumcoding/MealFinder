@@ -41,12 +41,12 @@ function findMeal(e) {
   searchInput.value = "";
 }
 // Get Meal By ID
-function getMealById(mealID) {
-  const mealDetails = fetch(
+async function getMealById(mealID) {
+  const res = await fetch(
     `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`
-  )
-    .then((res) => res.json())
-    .then((data) => data.meals[0]);
+  );
+  const data = await res.json();
+  const mealDetails = data.meals[0];
   addToDom(mealDetails);
 }
 
