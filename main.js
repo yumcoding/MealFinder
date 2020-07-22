@@ -44,3 +44,17 @@ function findMeal(e) {
 // EventListeners
 
 form.addEventListener("submit", findMeal);
+
+mealsContainer.addEventListener("click", (e) => {
+  const mealInfo = e.path.find((item) => {
+    if (item.classList.contains("mealInfo")) {
+      return item;
+    } else {
+      return false;
+    }
+  });
+  // console.log(mealInfo);
+  const mealID = mealInfo.getAttribute("data-mealid");
+  // console.log(mealID);
+  getMealById(mealID);
+});
